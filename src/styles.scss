@@ -1,0 +1,181 @@
+.btn-primary {
+    color: white;
+    background-color: #005aeb;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 16px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+p {
+    margin: 4px 0px;
+}
+
+input[type="text"], input[type="password"] {
+    height: 24px;
+}
+
+.error {
+    color: red;
+}
+
+.popup {
+    position: absolute;
+    z-index: 100;
+
+    #overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+        opacity: 0.7;
+    }
+
+    .popup-form {
+        padding: 8px;
+        background-color: #d7cfcf;
+        border: 1px solid;
+        position: fixed;
+        width: 30%;
+        max-width: 400px;
+        padding-right: 16px;
+        top: 100px;
+        left: 35%;
+        text-align: center;
+        border-radius: 6px;
+
+        .popup-close {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+        }
+
+        img {
+            height: 72px;
+        }
+        
+        p {
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+        }
+
+    }
+}
+
+#header {
+    display: flex;
+    align-items: center;
+
+    .account-btn {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        background-color: #787891;
+        border-color: antiquewhite;
+        color: white;
+        padding: 4px 24px;
+        border-radius: 6px;
+
+        img {
+            height: 12px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+    }
+
+    img#logo {
+        height: 140px;
+    }
+
+    #search-control {
+        width: calc(100% - 180px);
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        #search-options {
+            width: 80%;
+            margin-right: 30px;
+            #search-term {
+                width: 100%;
+                height: 24px;
+                margin-bottom: 8px;
+            }
+        }
+        input[type="radio"] {
+            vertical-align: top;
+        }
+    }
+}
+
+#sort-options {
+    display: inline-block;
+    .sort-field {
+        margin: 4px;
+    }
+}
+
+#books-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .book-tile {
+        width: 30%;
+        display: flex;
+        height: 144px;
+        margin: 20px;
+        border: 1px solid;
+        border-radius: 4px;
+
+        .cover-image {
+            width: 104px;
+            background-color: gray;
+        }
+
+        .book-details {
+            padding: 6px;
+            p {
+                margin: 4px 0px;
+            }
+            .title {
+                height: auto;
+                max-height: 36px;
+                overflow: hidden;
+            }
+            .author {
+                font-size: 14px;
+                height: 16px;
+                overflow: hidden;
+            }
+            .download {
+                top: 14px;
+                position: relative;
+                font-size: 14px;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#add-book {
+    position: absolute;
+    right: 0;
+    margin-right: 22px;
+}
+
+#pagination {
+    position: relative;
+    text-align: right;
+    margin-right: 20px;
+
+    button {
+        border-radius: 6px;
+        margin: 0px 4px;
+        padding: 4px 10px;
+    }
+}
