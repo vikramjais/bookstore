@@ -170,12 +170,25 @@ input[type="text"], input[type="password"] {
 
 #pagination {
     position: relative;
-    text-align: right;
+    float: right;
     margin-right: 20px;
+    display: inline-block;
+    background-color: gray;
+    padding: 8px;
+    color: white;
+    margin-bottom: 10px;
 
     button {
         border-radius: 6px;
         margin: 0px 4px;
         padding: 4px 10px;
+    }
+}
+
+#section-container {
+    button {
+        padding: 10px 24px;
+        border-radius: 6px;
+        margin-right: 6px;
     }
 }

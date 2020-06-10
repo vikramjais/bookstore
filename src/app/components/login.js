@@ -12,6 +12,7 @@ function Login ()
     let userField = useRef();
     let passwordField = useRef();
     let hasError = false;
+    let loginInterval = null;
 
     function closeLoginPopup ()
     {
@@ -29,6 +30,22 @@ function Login ()
         LocalStorage.setLocalStorage("dehaat_login", obj);
     }
 
+    function checkAndInvalidateLogin()
+    {
+        let loginData = LocalStorage.getLocalStorage("dehaat_login");
+        if (loginData) {
+            let timestamp = loginData.timestamp;
+            let newDate = new Date();
+            let currentTimestamp = Date.parse(newDate.toString());
+            if (currentTimestamp - timestamp > 3600000) {
+                LocalStorage.removeLocalStorage("dehaat_login");
+                dispatch(setUserLoggedIn(false));
+                dispatch(setUserName(null));
+                clearInterval(loginInterval);
+            }
+        }
+    }
+
     function handleLogin ()
     {
         const userName = userField.current.value;
@@ -38,6 +55,7 @@ function Login ()
             dispatch(setUserName(userName));   
             dispatch(setUserLoggedIn(true));
             createLoginInStorage(userName);
+            loginInterval = setInterval(checkAndInvalidateLogin, 60000);
         } else {
             hasError = true;
         }
