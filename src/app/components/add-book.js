@@ -6,8 +6,8 @@ import LocalStorage from "../utils/local-storage";
 
 function AddBook ()
 {
-    const showAddBook = useSelector(state => state.showAddBook);
-    const userName = useSelector(state => state.userName);
+    const showAddBook = useSelector(state => state.showPopup.showAddBook);
+    const userName = useSelector(state => state.loggedIn.userName);
 
     let dispatch = useDispatch();
     let titleField = useRef();

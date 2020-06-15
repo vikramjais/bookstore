@@ -6,10 +6,10 @@ import BookUtils from '../utils/bookutils.js';
 
 function SortOptionLinks ()
 {
-    const showSortOptions = useSelector(state => state.showSort);
-    const searchTerm = useSelector(state => state.searchTerm);
-    const searchField = useSelector(state => state.searchField);
-    const sort = useSelector(state => state.sort);
+    const showSortOptions = useSelector(state => state.showPopup.showSort);
+    const searchTerm = useSelector(state => state.searchOptions.searchTerm);
+    const searchField = useSelector(state => state.searchOptions.searchField);
+    const sort = useSelector(state => state.searchOptions.sort);
 
     let dispatch = useDispatch();
 

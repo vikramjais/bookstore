@@ -5,11 +5,11 @@ import BookUtils from '../utils/bookutils.js';
 
 function Pagination ()
 {
-    let currentPage = useSelector(state => state.currentPage);
-    let totalBooks = useSelector(state => state.totalBooks);
-    const searchTerm = useSelector(state => state.searchTerm);
-    const searchField = useSelector(state => state.searchField);
-    const sortField = useSelector(state => state.sortField);
+    let currentPage = useSelector(state => state.bookCollection.currentPage);
+    let totalBooks = useSelector(state => state.bookCollection.totalBooks);
+    const searchTerm = useSelector(state => state.searchOptions.searchTerm);
+    const searchField = useSelector(state => state.searchOptions.searchField);
+    const sortField = useSelector(state => state.searchOptions.sort);
 
     let showPrev = currentPage > 1;
     let showNext = currentPage * 25 < totalBooks;

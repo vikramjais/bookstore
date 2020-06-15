@@ -6,8 +6,8 @@ import BookUtils from '../utils/bookutils.js';
 
 function SectionSelection ()
 {
-    const userLoggedIn = useSelector(state => state.userLoggedIn);
-    const userName = useSelector(state => state.userName);
+    const userLoggedIn = useSelector(state => state.loggedIn.userLoggedIn);
+    const userName = useSelector(state => state.loggedIn.userName);
     let dispatch = useDispatch();
 
     function handleUserCollection ()

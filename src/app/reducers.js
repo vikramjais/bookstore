@@ -1,125 +1,85 @@
 import {combineReducers} from 'redux';
 
-function showLogin (state = false, action)
+function showPopup (
+    state = {
+        showLogin: false,
+        showAddBook: false,
+        showSort: false,
+    },
+    action)
 {
     switch (action.type) {
         case "SET_SHOW_LOGIN":
-            return action.showLogin;
-        default:
-            return state;
-    }
-}
-
-function showAddBook (state = false, action)
-{
-    switch (action.type) {
+            return Object.assign({}, state, {showLogin: action.showLogin});
         case "SET_SHOW_ADD_BOOK":
-            return action.showAddBook;
+            return Object.assign({}, state, {showAddBook: action.showAddBook});
+        case "SET_SHOW_SORT":
+            return Object.assign({}, state, {showSort: action.showSort});
         default:
             return state;
     }
 }
 
-function books (state = [], action)
-{
-    switch (action.type) {
-        case "SET_BOOKS":
-            return action.books;
-        default:
-            return state;
-    }
-}
-
-function searchTerm (state = '', action)
+function searchOptions (
+    state = {
+        searchTerm: '',
+        searchField: 'title',
+        sort: 'def'
+    },
+    action)
 {
     switch (action.type) {
         case "SET_SEARCH_TERM":
-            return action.searchTerm;
+            return Object.assign({}, state, {searchTerm: action.searchTerm});
+        case "SET_SEARCH_FIELD":
+            return Object.assign({}, state, {searchField: action.searchField});
+        case "SET_SORT":
+            return Object.assign({}, state, {sort: action.sort});
         default:
             return state;
     }
 }
 
-function userLoggedIn (state = false, action)
+function loggedIn (
+    state = {
+        userLoggedIn: false,
+        userName: null
+    }
+    , action)
 {
     switch (action.type) {
         case "SET_USER_LOGGED_IN":
-            return action.userLoggedIn;
-        default:
-            return state;
-    }
-}
-
-function userName (state = '', action)
-{
-    switch (action.type) {
+            return Object.assign({}, state, {userLoggedIn: action.userLoggedIn});
         case "SET_USER_NAME":
-            return action.userName;
+            return Object.assign({}, state, {userName: action.userName});
         default:
             return state;
     }
 }
 
-function searchField (state = 'title', action)
+function bookCollection (
+    state = {
+        books: [],
+        totalBooks: 0,
+        currentPage: 1
+    },
+    action)
 {
     switch (action.type) {
-        case "SET_SEARCH_FIELD":
-            return action.searchField;
-        default:
-            return state;
-    }
-}
-
-function totalBooks (state = 0, action)
-{
-    switch (action.type) {
+        case "SET_BOOKS":
+            return Object.assign({}, state, {books: action.books});
         case "SET_TOTAL_BOOKS":
-            return action.totalBooks;
-        default:
-            return state;
-    }
-}
-
-function currentPage (state = 1, action)
-{
-    switch (action.type) {
+            return Object.assign({}, state, {totalBooks: action.totalBooks});
         case "SET_CURRENT_PAGE":
-            return action.currentPage;
-        default:
-            return state;
-    }
-}
-
-function showSort (state = false, action)
-{
-    switch (action.type) {
-        case "SET_SHOW_SORT":
-            return action.showSort;
-        default:
-            return state;
-    }
-}
-
-function sort (state = "def", action)
-{
-    switch (action.type) {
-        case "SET_SORT":
-            return action.sort;
+            return Object.assign({}, state, {currentPage: action.currentPage});
         default:
             return state;
     }
 }
 
 export default combineReducers({
-    showLogin,
-    showAddBook,
-    searchTerm,
-    books,
-    userLoggedIn,
-    userName,
-    searchField,
-    totalBooks,
-    currentPage,
-    showSort,
-    sort
+    showPopup,
+    searchOptions,
+    bookCollection,
+    loggedIn
 });

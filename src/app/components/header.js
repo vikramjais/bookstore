@@ -9,9 +9,9 @@ import LocalStorage from '../utils/local-storage';
 
 function Header ()
 {
-    let searchTerm = useSelector(state => state.searchTerm);
-    let userLoggedIn = useSelector(state => state.userLoggedIn);
-    let searchField = useSelector(state => state.searchField);
+    let searchTerm = useSelector(state => state.searchOptions.searchTerm);
+    let userLoggedIn = useSelector(state => state.loggedIn.userLoggedIn);
+    let searchField = useSelector(state => state.searchOptions.searchField);
 
     let dispatch = useDispatch();
 

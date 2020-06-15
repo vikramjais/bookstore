@@ -8,8 +8,8 @@ import LocalStorage from '../utils/local-storage.js';
 
 function BooksList ()
 {
-    let books = useSelector(state => state.books);
-    let userName = useSelector(state => state.userName);
+    let books = useSelector(state => state.bookCollection.books);
+    let userName = useSelector(state => state.loggedIn.userName);
     let dispatch = useDispatch();
 
     function handleAddBook ()

@@ -7,7 +7,7 @@ import LocalStorage from '../utils/local-storage';
 
 function Login ()
 {
-    let showLogin = useSelector(state => state.showLogin);
+    let showLogin = useSelector(state => state.showPopup.showLogin);
     let dispatch = useDispatch();
     let userField = useRef();
     let passwordField = useRef();

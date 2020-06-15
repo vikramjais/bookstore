@@ -77,7 +77,7 @@ class App extends Component
 function mapStateToProps (state)
 {
     return {
-        books: state.books
+        books: state.bookCollection.books
     };
 }
 
