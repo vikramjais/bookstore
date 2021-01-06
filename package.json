@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "file-loader": "^6.0.0",
     "libgen": "^1.0.0",
     "mini-css-extract-plugin": "^0.9.0",
