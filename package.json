@@ -15,7 +15,7 @@
     "libgen": "^1.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "net": "^1.0.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
